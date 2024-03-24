@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AR.js A-Frame Location-based</title>
+        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+        <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+        <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+    </head>
+
+    <body>
+        <a-scene vr-mode-ui='enabled: false'
+                 arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false'
+                 renderer='antialias: true; alpha: true'>
+
+            <!--            <a-assets timeout="10000">-->
+            <a-assets>
+                <img id="01" src="assets/01_Coles-Ext_01_fromHumboldtPkwy.jpg">
+
+                <img id="02" src="assets/02_Coles-Ext_02_Entrance.jpg">
+
+                <img id="03" src="assets/03_Humboldt%20Excavation.jpg">
+
+                <img id="04" src="assets/04_Humboldt%20Pkwy.jpg">
+
+                <img id="05" src="assets/05_Coles-Ext_04_rearElevation.jpg">
+
+                <img id="06" src="assets/06_Coles-Int_01_LivingRoom.jpg">
+
+                <img id="07" src="assets/07_Coles-Int_07_dining.jpg">
+
+                <img id="08" src="assets/08_Coles-Int_08_intStair.jpg">
+
+                <img id="09" src="assets/09_Coles-Int_05_kitchen.jpg">
+
+                <img id="10" src="assets/10_Coles-Int_03_LivingRoom.jpg">
+
+                <img id="11" src="assets/11_Humboldt%20Pkwy%20Trees%20Cut.jpg">
+
+                <img id="12" src="assets/12_humboldt_construction.png">
+
+                <img id="13" src="assets/13_JFK%20Recreation%20Center_News%20Article.jpg">
+
+                <img id="14" src="assets/14_humboldt+construction.png">
+
+                <img id="15" src="assets/15_JFK%20Recreation%20Center_Best%20of.jpg">
+
+                <img id="16" src="assets/16_humboldtExcavation.jpg">
+
+                <img id="17" src="assets/17_Coles-Ext_03_rear.jpg">
+
+                <img id="18" src="assets/18_Coles-Int_06_kitchen.jpg">
+
+                <img id="19" src="assets/19_kensington-exp065.jpg">
+
+                <img id="20" src="assets/20_JFK%20Recreation%20Center.jpg">
+
+                <img id="21" src="assets/21_Coles-Int_02_LivingRoom.jpg">
+
+                <img id="22" src="assets/22_Coles-Int_04_Bedroom.jpg">
+
+                <!--
+<a-asset-item id="tree-obj" src="assets/scans_3D/textured.obj"></a-asset-item>
+<a-asset-item id="tree-mtl" src="assets/scans_3D/textured.mtl"> </a-asset-item>
+-->
+            </a-assets>
+
+            <script>
+                var arrayImages = ["#01", "#02", "#03", "#04"]
+            </script>
+
+
+
+            <!------------------------------------------------------------------>
+
+            <!--object for troubleshooting / testing-->
+            <!--Place a box at a specific gps location: 42.44462792252055, -76.50417131252031-->
+            <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+            <a-entity material='color: red'
+                      geometry='primitive: box'
+                      gps-new-entity-place="latitude: 42.44460; longitude: -76.50416"
+                      scale="30 30 30">
+            </a-entity>
+
+            <a-entity material='color: blue'
+                      geometry='primitive: box'
+                      position='0 0 -15'
+                      scale="2 2 2">
+            </a-entity>
+
+            <!---------------------------------------------------------->
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#01"
+                     gps-new-entity-place="latitude: 42.925313967504756; longitude: -78.84711827560466"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#02"
+                     gps-new-entity-place="latitude: 42.92531281428644; longitude: -78.84709574807484"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#03"
+                     gps-new-entity-place="latitude: 42.925321400800065; longitude: -78.84690030919826"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#04"
+                     gps-new-entity-place="latitude: 42.925420930296426; longitude: -78.84696147467852"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#05"
+                     gps-new-entity-place="latitude: 42.92508540058955; longitude: -78.8474856255901"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#06"
+                     gps-new-entity-place="latitude: 42.92514333955289; longitude: -78.8473039059317"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#07"
+                     gps-new-entity-place="latitude: 42.92514871623745; longitude: -78.84725861380612"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#08"
+                     gps-new-entity-place="latitude: 42.92519069484946; longitude: -78.84725340210285"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#09"
+                     gps-new-entity-place="latitude: 42.925095220757434; longitude: -78.84728714212609"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#10"
+                     gps-new-entity-place="latitude: 42.92518998528835; longitude: -78.84733341023006"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#11"
+                     gps-new-entity-place="latitude: 42.925415257448385; longitude: -78.84701415593267"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#12"
+                     gps-new-entity-place="latitude: 42.925284192565265; longitude: -78.84689249164336"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#13"
+                     gps-new-entity-place="latitude: 42.92521263820344; longitude: -78.8472091026251"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#14"
+                     gps-new-entity-place="latitude: 42.9252374437246; longitude: -78.8472012850702"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#15"
+                     gps-new-entity-place="latitude: 42.925224086906745; longitude: -78.84717783240552"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#16"
+                     gps-new-entity-place="latitude: 42.925571827862605; longitude: -78.84721713370595"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#17"
+                     gps-new-entity-place="latitude: 42.92499898305283; longitude: -78.84742125257661"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#18"
+                     gps-new-entity-place="latitude: 42.92512075318419; longitude: -78.84730591758836"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#19"
+                     gps-new-entity-place="latitude: 42.92549921554608; longitude: -78.84717529859238"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#20"
+                     gps-new-entity-place="latitude: 42.92526129517885; longitude: -78.84679607513296"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#21"
+                     gps-new-entity-place="latitude: 42.92514972265582; longitude: -78.84679607513296"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#22"
+                     gps-new-entity-place="latitude: 42.92514972265582; longitude: -78.84738571330352"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+            <!--1: 42.925313967504756, -78.84711827560466-->
+            <a-image src="#01"
+                     gps-new-entity-place="latitude: 42.925134992418215; longitude: -78.84738571330352"
+                     position="0 0 0"
+                     rotation="0 0 0"
+                     scale="10 10 10"
+                     animation="property: material.opacity; from: 0.9; to: 0.4; loop: true; dir: alternate; dur: 5000">
+            </a-image>
+
+
+
+
+
+            <!-- Basic box to signal location of image-->
+            <a-box color="black"
+                   depth="10"
+                   height="10"
+                   width="10"
+                   position='15 60 -15'
+                   animation="property: material.opacity; from: 0.8; to: 0.1; loop: true; dir: alternate; dur: 5000"
+                   >
+            </a-box>
+
+            <!--Place an image at the following GPS coordinates: 42.44460, -78.84714808465061-->
+            <!--
+<a-image src="#Coles_Entrance"
+gps-new-entity-place="latitude: 42.925262364731836; longitude: -76.50416"
+scale="10 10 10">                
+</a-image>
+-->
+
+
+
+            <!--            Rear GPS: 42.92504188320984, -78.84744693310255-->
+            <!--
+<a-image src="#Coles_Rear"
+gps-new-entity-place="latitude: 42.92504188320984; longitude: -78.84744693310255"
+scale="10 10 10">
+</a-image>
+-->
+        </a-scene>
+    </body>
+</html>
